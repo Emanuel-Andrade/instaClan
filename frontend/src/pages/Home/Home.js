@@ -30,12 +30,7 @@ if(loading) return(
 return(
   
     <div id='photo'>
-        { photos && photos.map( photo =>(
-      <div key={photo._id} >
-        <div onClick={ () => Navigate('/images/'+photo._id)}> <PhotoItem photo={photo} /> </div>
-        <LikeContainer photo={photo} user={user}/>
-      </div>
-    ))}
+        { photos && <h1> ola </h1> }
     </div>
 
 )
