@@ -9,6 +9,7 @@ const conn = async () => {
     const connection = await mongoose.connect(connectionUrl,{
               useNewUrlParser: true,
               ssl: true,
+              authSource: "admin",
     });
 
     console.log('connected to Mongo');
