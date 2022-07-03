@@ -8,7 +8,7 @@ const conn = async () => {
   try {
     const connection = await mongoose.connect(connectionUrl,{
               useNewUrlParser: true,
-      
+              ssl: true,
     });
 
     console.log('connected to Mongo');
