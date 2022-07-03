@@ -11,6 +11,7 @@ import LikeContainer from '../../components/LikeContainer';
 const Home = () => {
   const Navigate= useNavigate()
   const {loading, photos} = useSelector( state => state.photo)
+  console.log(photos)
   const { user } = useSelector(state => state.auth)
   const dispatch = useDispatch()
 

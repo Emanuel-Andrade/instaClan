@@ -81,7 +81,6 @@ export const getPhotoById = createAsyncThunk("photo/GetById",
             const res = await photoServices.getPhotoByID(photoId,token)
 
             if(res.errors) return thunkAPI.rejectWithValue(res.errors[0])
-            console.log(res)
             return res
 
         } catch (error) {
@@ -101,7 +100,6 @@ async (photoId, thunkAPI) =>{
         if (res.errors) return thunkAPI.fulfillWithValue(res.errors[0])
 
         const photos =  await photoServices.getAllPhotos()
-        console.log(photos)
         return {res, photos}
 
     } catch (error) {
