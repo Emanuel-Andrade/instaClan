@@ -6,7 +6,10 @@ const connectionUrl = `mongodb+srv://${user}:${password}@cluster0.a5yik.mongodb.
 
 const conn = async () => {
   try {
-    const connection = await mongoose.connect(connectionUrl);
+    const connection = await mongoose.connect(connectionUrl,{
+              useNewUrlParser: true,
+      
+    });
 
     console.log('connected to Mongo');
     return connection;

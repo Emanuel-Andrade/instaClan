@@ -27,6 +27,7 @@ function App() {
           <NavBar/>
             <div className="container">
               <Routes>
+                <Route path="/instaclan" element={ auth? <Home/>: <Navigate to='/login'/> } />
                 <Route path="/" element={ auth? <Home/>: <Navigate to='/login'/> } />
                 <Route path="/search" element={ auth? <Search/>: <Navigate to='/login'/> } />
                 <Route path="/profile" element={ auth? <EditProfile/>: <Navigate to='/login'/> } />
