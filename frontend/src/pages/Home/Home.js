@@ -19,7 +19,9 @@ const Home = () => {
   },[like])
   
 
-  
+  if(photos.length == 0) return(
+    <h1> Ainda não há fotos publicadas </h1>
+  )  
 
 if(loading) return(
   <ReactLoading className='loading' type='bubbles'  color='#0096f6' height={100} width={100} />
