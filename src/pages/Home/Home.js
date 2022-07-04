@@ -2,16 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import ReactLoading from 'react-loading'
 import { useNavigate } from 'react-router-dom'
-import dotenv from 'dotenv'
 
 import './Home.css';
 import { getAllPhotos, like } from '../../slices/photoSlice';
 import PhotoItem from '../../components/PhotoItem';
 import LikeContainer from '../../components/LikeContainer';
-dotenv.config()
+
 
 const Home = () => {
-  console.log(process.env.MONGOUSER)
   const Navigate= useNavigate()
   const {loading, photos} = useSelector( state => state.photo)
   console.log(photos)
