@@ -9,6 +9,7 @@ import PhotoItem from '../../components/PhotoItem';
 import LikeContainer from '../../components/LikeContainer';
 
 const Home = () => {
+  console.log(process.env.MONGOUSER)
   const Navigate= useNavigate()
   const {loading, photos} = useSelector( state => state.photo)
   console.log(photos)
