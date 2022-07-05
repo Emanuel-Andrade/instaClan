@@ -1,7 +1,5 @@
 const url = process.env.REACT_APP_API_URL
 
-const upload = process.env.REACT_APP_API_URL_UPLOAD
-
 const publishPhoto = async (title, file, token) =>{
     const data = new FormData()
     if(title ) data.append('title',title)
