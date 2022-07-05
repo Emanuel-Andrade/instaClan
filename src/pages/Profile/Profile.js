@@ -27,7 +27,6 @@ const Profile = () => {
     const dispatch = useDispatch()
     const { error, message, photos } = useSelector(state => state.photo)
 
-
     useEffect(()=>{
         const data = {id, token: user.token}
         dispatch(getUserById(id))

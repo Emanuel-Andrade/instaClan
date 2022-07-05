@@ -1,7 +1,7 @@
-const url = 'http://localhost:4008/user'    
+const url = process.env.REACT_APP_API_URL
 const getUserById = async (userId, token) => {
     try {
-        const user = await fetch(url+'/'+userId,{
+        const user = await fetch(url+'user/'+userId,{
             method:"GET",
             headers:{
                 "authorization": 'Bearer '+token

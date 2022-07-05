@@ -1,5 +1,5 @@
-export const url = 'http://localhost:4008'
-export const upload = 'http://localhost:4008/uploads'
+export const url = process.env.REACT_APP_API_URL
+export const upload = 'https://instaclan-backend.herokuapp.com/uploads'
 
 export const requestConfig = (method, data, token = null, image = null) =>{
 

@@ -1,4 +1,6 @@
-const url = 'http://localhost:4008/'
+const url = process.env.REACT_APP_API_URL
+
+const upload = process.env.REACT_APP_API_URL_UPLOAD
 
 const publishPhoto = async (title, file, token) =>{
     const data = new FormData()
@@ -135,7 +137,6 @@ const comment = async (comment, photoId, token) =>{
 
 }
 const getAllPhotos = async () =>{
-
     try {
         const photos = await fetch(url+"images",{method:"GET"}).then( res => res.json()).catch( err => err)
 
