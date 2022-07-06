@@ -16,9 +16,8 @@ const registerAnUser = async data =>{
 
 
 const logout = ()=>{
-    localStorage.removeItem('user')
+    localStorage.clear()
 }
-
 const login = async data =>{
     const config = requestConfig('POST', data)
 

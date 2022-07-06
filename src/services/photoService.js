@@ -6,7 +6,7 @@ const publishPhoto = async (title, file, token) =>{
     if(file)data.append('image',file)
 
     try {
-        const photo = await fetch(`${url}image`,{
+        const photo = await fetch(`${url}/image`,{
             method:"POST",
             body: data,
             headers:{
@@ -25,7 +25,7 @@ const publishPhoto = async (title, file, token) =>{
 const getUserPhotos = async (userId, token) =>{
 
     try {
-        const photos = await fetch(`${url}user/images/${userId}`,{
+        const photos = await fetch(`${url}/user/images/${userId}`,{
             method:"GET",
             headers:{
                 "Authorization": "Bearer " +token
@@ -46,7 +46,7 @@ const deletePhoto = async (photoId, token )=>{
 
     try {
         
-        const photo = await fetch(`${url}images/${photoId}`,{
+        const photo = await fetch(`${url}/images/${photoId}`,{
             method:"DELETE",
             headers:{
                 "Authorization": "Bearer " +token
@@ -67,11 +67,11 @@ const updatePhoto = async (title, photoId, token) =>{
     const data = {title}
     try {
         
-        const editedPhoto =await fetch(`${url}images/${photoId}`,{
+        const editedPhoto =await fetch(`${url}/images/${photoId}`,{
             method:"PUT",
             body: JSON.stringify(data),
             headers:{
-                "Authorization": "Beare "+token,
+                "Authorization": "Bearer "+token,
                 "Content-Type": "application/json"
             }
         }).then(res => res.json())
@@ -87,7 +87,7 @@ const updatePhoto = async (title, photoId, token) =>{
 const getPhotoByID = async (photoId, token) =>{
 
     try {
-        const photo = await fetch(`${url}images/${photoId}`,{
+        const photo = await fetch(`${url}/images/${photoId}`,{
             headers:{
                 "Authorization": "Bearer" +token
             }
@@ -103,7 +103,7 @@ const getPhotoByID = async (photoId, token) =>{
 const like = async (id, token) => {
 
     try {
-        const res = await fetch(url+'like/'+id,{
+        const res = await fetch(url+'/like/'+id,{
             method: "PUT",
             headers:{
                 "Authorization": "Bearer "+token
@@ -118,7 +118,7 @@ const like = async (id, token) => {
 }
 const comment = async (comment, photoId, token) =>{
     try {
-        const res = await fetch(url+'comment/'+photoId,{
+        const res = await fetch(url+'/comment/'+photoId,{
             method:"PUT",
             headers:{
                 "Authorization": "Bearer " +token,
@@ -136,8 +136,7 @@ const comment = async (comment, photoId, token) =>{
 }
 const getAllPhotos = async () =>{
     try {
-        const photos = await fetch(url+"images",{method:"GET"}).then( res => res.json()).catch( err => err)
-        console.log(photos)
+        const photos = await fetch(url+"/images",{method:"GET"}).then( res => res.json()).catch( err => err)
         return photos
         
     } catch (error) {
@@ -149,7 +148,7 @@ const getAllPhotos = async () =>{
 const search = async (query, token) =>{
 
     try {
-        const photos = await fetch(url+'images/search?q='+query,{
+        const photos = await fetch(url+'/images/search?q='+query,{
             method:"GET",
             headers:{
                 "Authorization": "Bearer "+token

@@ -1,7 +1,7 @@
 const url = process.env.REACT_APP_API_URL
 const getUserById = async (userId, token) => {
     try {
-        const user = await fetch(url+'user/'+userId,{
+        const user = await fetch(url+'/user/'+userId,{
             method:"GET",
             headers:{
                 "authorization": 'Bearer '+token
@@ -23,7 +23,7 @@ const updateProfile = async (data, token, image = null) =>{
     updateUser.append('bio', data.bio)
     try {
         
-        const res = await fetch(url,{
+        const res = await fetch(url+'/user',{
             method:"PUT",
             body: updateUser ,
             headers:{
